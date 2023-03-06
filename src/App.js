@@ -19,11 +19,6 @@ function App() {
   return (
     <div>
       <Navbar />
-
-      <br />
-      <br />
-      <br />
-
       <div className="w-full h-screen">
         <Routes>
           <Route path="/" element={<Home />} />

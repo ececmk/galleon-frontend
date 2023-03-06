@@ -6,7 +6,7 @@ import financeImg3 from "../Images/3.jpg";
 function Home(props) {
   return (
     <>
-      <div className="flex justify-center flex-col">
+      <div className="flex justify-center flex-col bg-[#7F3DFF]">
         <div className="container mx-auto  px-4 bg-[#7F3DFF] mt-20 flex w-2/3 h-3/4  justify-between rounded-md pt-10 pb-20 flex-col lg:flex-row">
           <div className="pt-10 pl-5">
             <h1 className="text-6xl lg:text-8xl text-white mb-8  font-bold">

@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
-import piggy from "../Images/piggy-bank.png";
+import Review from "../Components/Reviews";
+import heroImg from "../Images/hero-image.png";
 import finance1 from "../Images/1.png";
 import finance2 from "../Images/2.png";
 import finance3 from "../Images/3.png";
@@ -28,8 +29,8 @@ function Home(props) {
           </div>
           <img
             className=" items-center "
-            src={piggy}
-            alt="Piggy Bank"
+            src={heroImg}
+            alt="Savings"
           />
         </div>
         <div className="h-screen flex flex-row mt-16">
@@ -55,6 +56,7 @@ function Home(props) {
             </div>
           </div>
         </div>
+        <Review />
       </div>
     </>
   );

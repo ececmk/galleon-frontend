@@ -6,11 +6,11 @@ import { AuthContext } from "../context/auth.context";
 
 function Navbar() {
   const NewUserLinks = [
-    { name: "ʛ Sign Up", link: "/signup" },
-    { name: "ʛ Login", link: "/login" },
+    { name: "Sign Up", link: "/signup" },
+    { name: "Login", link: "/login" },
   ];
 
-  const UserLinks = [{ name: "ʛ Profile", link: "/profile" }];
+  const UserLinks = [{ name: "Profile", link: "/profile" }];
 
   const [open, setOpen] = useState(false);
   const { isLoggedIn, logOutUser } = useContext(AuthContext);
@@ -91,7 +91,7 @@ function Navbar() {
                         onClick={logOutUser}
                       >
                         {" "}
-                        ʛ Logout
+                        Logout
                       </button>
                     </Link>
                   </li>

@@ -16,7 +16,7 @@ function Navbar() {
   const { isLoggedIn, logOutUser } = useContext(AuthContext);
 
   return (
-    <nav className="w-full bg-[#7F3DFF] px-44 py-8 ">
+    <nav className="w-full bg-[#7F3DFF] px-20 py-8 ">
       <div className="   ">
         <div className="md:flex items-center justify-between md:px-10 px-7">
           {" "}

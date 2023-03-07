@@ -37,45 +37,47 @@ function Login(props) {
   };
 
   return (
-    <div className="grid grid-cols-1 mx">
+    <div className="grid grid-cols-1 mx bg-[#7F3DFF]" >
       <div className=" flex flex-col justify-center mt-32 mb-40">
         <form
-          className="max-w-[500px]  max-h-[400] w-full mx-auto bg-[#7F3DFF] p-12 px-11 rounded-lg"
+          className="max-w-[500px]  max-h-[400] w-full mx-auto bg-white p-12 px-11 rounded-lg"
           onSubmit={handleLoginSubmit}
         >
-          <h2 className="text-4x1 text-white font-bold text-center">Log in!</h2>
-          <div className="flex flex-col text-white py-2">
+          <h2 className="text-4x1 text-black font-bold text-center">Log in!</h2>
+          <div className="flex flex-col text-black py-2">
             <label>E-mail:</label>
             <input
-              className="rounded-lg bg-white mt-2 p-2 focus:border-[#00A86B] focus:outline-none text-black"
+              className="rounded-lg bg-white mt-2 p-2 border-2  text-black"
               type="email"
               name="email"
+              placeholder="example@example.com"
               value={email}
               onChange={handleEmail}
             />
           </div>
-          <div className="flex flex-col text-white py-2">
+          <div className="flex flex-col text-black py-2">
             <label>Password:</label>
             <input
-              className="rounded-lg bg-white mt-2 p-2 focus:border-[#00A86B] focus:outline-none text-black"
+              className="rounded-lg bg-white mt-2 p-2 border-2  text-black"
               type="password"
               name="password"
+              placeholder="********"
               value={password}
               onChange={handlePassword}
             />
           </div>
-          <div className="w-full my-5 py-2 rounded-lg font-semibold  bg-white hover:bg-violet-400 text-[#7F3DFF]">
+          <div className="w-full my-5 py-2 rounded-lg font-semibold  bg-[#7F3DFF] hover:bg-violet-400 text-white">
             <button className="w-full" type="submit">
-              ʛ Login
+              Login
             </button>
           </div>
-          <div className="flex justify-center text-white">
+          <div className="flex justify-center text-black">
             <p>Don't have an account yet?</p>
             <Link
-              className="text-white hover:text-violet-400 ml-2"
+              className="text-black hover:text-violet-400 ml-2"
               to={"/signup"}
             >
-              ʛ Sign Up
+              Sign Up
             </Link>
           </div>
         </form>

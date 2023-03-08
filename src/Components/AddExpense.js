@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { FaChevronDown } from 'react-icons/fa';
 import axios from "axios";
 import ExpenseDropdown from "./ExpenseDropdown";
 
@@ -29,26 +28,20 @@ function AddExpense(props) {
   };
 
   return (
-    <div className="w-52 border-2 border-red-400  flex flex-col m-5">
+    <div className=" border-2 border-red-400 py-4  flex flex-col m-5 bg-[#FD3C4A] rounded ">
 
       <form className="flex  pr-2 pl-2" onSubmit={handleSubmit}>
 
-        <ExpenseDropdown/>
-        
-     
-
-        <label className="text-lg">Amount:</label>
-        <input
+        <ExpenseDropdown className="m-1" onChange={(e) => SetCategory(e.target.value)}/>
+        <input className="h-[38px] mx-1 rounded text-gray-500"
           type="number"
           name="amount"
           value={expense}
-          onChange={(e) => setExpense(e.target.value)}
-        />
-
+          placeholder= 'Amount'
+          onChange={(e) => setExpense(e.target.value)}/>
         <button
-          className="btn-red px-3 mb-2 mt-2 text-white  justify-center  bg-[#FD3C4A] py-3 font-bold text-lg"
-          type="submit"
-        >
+          className="px-3  text-white border-black justify-center  font-bold text-lg"
+          type="submit">
           {" "}
           Add Expense
         </button>

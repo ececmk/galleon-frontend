@@ -15,8 +15,10 @@ import Select from "react-select";
     const ExpenseDropdown = () => {
         return(
         <div>
-        <p>Select a category</p>
-        <Select options={expenseCategories} />
+      
+        <Select className="w-[12.5rem]"
+        placeholder='Select a category' 
+        options={expenseCategories} />
         </div>
         )
     }

@@ -42,7 +42,7 @@ function Profile() {
 
   return (
     <div>
-      <Wallet incomes={income} expenses={expense} />
+    
 
       <div className="flex flex-col md:flex-row">
         <div className="flex  w-1/2 justify-center md:flex-row">
@@ -51,7 +51,6 @@ function Profile() {
           </div>
           
         </div>
-
         <div>
           <DoughnutChart expenses={expense} />
         </div>

@@ -49,9 +49,7 @@ function Profile() {
           <div>
             <ExpenseListPage expenses={expense} refresh={getExpense} />
           </div>
-          <div>
-            <IncomeListPage incomes={income} refresh={getIncome} />
-          </div>
+          
         </div>
 
         <div>

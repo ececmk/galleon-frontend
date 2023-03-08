@@ -87,7 +87,7 @@ function Navbar() {
                   <li>
                     <Link to="/">
                       <button
-                        className="text-[#FCAC12]text-2xl duration-500 ml-2"
+                        className="text-[#FCAC12] hover:text-[#EEEEEE] text-2xl duration-500 ml-2"
                         onClick={logOutUser}
                       >
                         {" "}

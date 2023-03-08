@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import people from '../review-data';
-import { FaChevronLeft, FaChevronRight, FaQuoteRight } from 'react-icons/fa';
+import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 
 const Review = () => {
 
@@ -15,7 +15,7 @@ const Review = () => {
     }else {
       return number
     }
-
+    
   }
 
   const nextPerson = () =>{

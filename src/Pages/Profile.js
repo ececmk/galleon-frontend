@@ -41,18 +41,18 @@ function Profile() {
   }, []);
 
   return (
-    <div>
+    <div className="w-screen h-screen">
     
 
       <div className="flex flex-col md:flex-row">
         <div className="flex  w-1/2 justify-center md:flex-row">
-          <div>
             <ExpenseListPage expenses={expense} refresh={getExpense} />
-          </div>
+            <IncomeListPage incomes={income} refresh={getIncome} />
+          
           
         </div>
         <div>
-          <DoughnutChart expenses={expense} />
+         
         </div>
       </div>
     </div>

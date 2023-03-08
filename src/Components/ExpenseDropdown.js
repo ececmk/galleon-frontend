@@ -23,4 +23,4 @@ import Select from "react-select";
         )
     }
 
-export default ExpenseDropdown
+export default ExpenseDropdown;

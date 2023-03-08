@@ -33,7 +33,7 @@ function AddExpense(props) {
 
       <form className="flex  pr-2 pl-2" onSubmit={handleSubmit}>
 
-        <ExpenseDropdown onChange={(e) => SetCategory(e.target.value)}/>
+        <ExpenseDropdown/>
         
      
 

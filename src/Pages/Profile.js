@@ -42,18 +42,9 @@ function Profile() {
 
   return (
     <div className="w-screen h-screen">
-    
-
-      <div className="flex flex-col md:flex-row">
-        <div className="flex  w-1/2 justify-center md:flex-row">
+        <div className="flex  justify-center">
             <ExpenseListPage expenses={expense} refresh={getExpense} />
             <IncomeListPage incomes={income} refresh={getIncome} />
-          
-          
-        </div>
-        <div>
-         
-        </div>
       </div>
     </div>
   );

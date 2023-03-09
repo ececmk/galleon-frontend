@@ -16,7 +16,7 @@ import Select from "react-select";
         return(
         <div>
       
-        <Select className="w-[12.5rem]"
+        <Select  className="w-[12.5rem]"
         placeholder='Select a category' 
         options={expenseCategories} />
         </div>

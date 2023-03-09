@@ -24,6 +24,7 @@ function AddExpense(props) {
         props.refresh();
       })
       .catch((error) => console.log(error));
+     
   };
 
   return (
@@ -32,7 +33,6 @@ function AddExpense(props) {
       <form className="flex  pr-2 pl-2" onSubmit={handleSubmit}>
 
         <ExpenseDropdown className="m-1" 
-          value={category}
           onChange={(value) => SetCategory(value.value)}
           onSelect={(value) => SetCategory(value.value)}/>
         <input className="h-[38px] mx-1 rounded text-gray-500"

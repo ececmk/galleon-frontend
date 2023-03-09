@@ -1,11 +1,10 @@
 import { useState } from "react";
 import axios from "axios";
-import { Dropdown } from "react-dropdown-now";
+import ExpenseDropdown from "./ExpenseDropdown"
 
 const API_URL = "http://localhost:5005";
 
 function ExpenseCard({
-  expenseTitle,
   expenseValue,
   expenseCategory,
   expenseId,
@@ -13,7 +12,7 @@ function ExpenseCard({
 }) {
   const [editDisabled, setEditDisabled] = useState(true);
 
-  const [title, setTitle] = useState(expenseTitle);
+
   const [expense, setExpense] = useState(expenseValue);
   const [category, setCategory] = useState([expenseCategory]);
 
@@ -21,7 +20,7 @@ function ExpenseCard({
     e.preventDefault();
     setEditDisabled(true);
 
-    const requestBody = { title, category, expense };
+    const requestBody = { category, expense };
     const storedToken = localStorage.getItem("authToken");
     axios
       .put(`${API_URL}/api/expense/${expenseId}`, requestBody, {
@@ -29,7 +28,6 @@ function ExpenseCard({
       })
       .then((response) => {
         const updatedExpense = response.data;
-        setTitle(updatedExpense.title);
         setCategory(updatedExpense.category);
         setExpense(updatedExpense.expense);
         refresh();
@@ -54,11 +52,6 @@ function ExpenseCard({
     setEditDisabled(false);
   };
 
-  const changeTitle = (e) => {
-    e.preventDefault();
-    setTitle(e.target.value);
-  };
-
   const changeExpense = (e) => {
     e.preventDefault();
     setExpense(e.target.value);
@@ -73,13 +66,7 @@ function ExpenseCard({
       <div className="w-52 m-5  border-2 border-red-400  ">
         <form className="flex flex-col pr-2 pl-2 my-2">
           <div className="flex">
-            <input
-              size="14"
-              disabled={editDisabled}
-              value={title}
-              onChange={changeTitle}
-            />
-
+         
             <input
               maxLength="6"
               size="6"
@@ -89,26 +76,11 @@ function ExpenseCard({
             />
           </div>
 
-          <Dropdown
+          <ExpenseDropdown
             disabled={editDisabled}
             placeholder={category}
-            options={[
-              "Rent",
-              "Food",
-              "Bills",
-              "Shopping",
-              "Transportation",
-              "Entertainment",
-              "other...",
-            ]}
-            value={category}
             onChange={(value) => changeCategory(value)}
-            onSelect={(value) => changeCategory(value)}
-            onClose={(closedBySelection) =>
-            console.log("closedBySelection?:", closedBySelection)
-          }
-          onOpen={() => console.log("open!")}
-          />
+            onSelect={(value) => changeCategory(value)}/>
         </form>
 
         {editDisabled ? (

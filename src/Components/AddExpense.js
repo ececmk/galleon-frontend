@@ -43,7 +43,7 @@ function AddExpense(props) {
         <input className="h-[38px] mx-1 rounded text-gray-500 px-2"
           type="number"
           name="amount"
-          value={expense}
+          value={expense} 
           placeholder= 'Amount'
           onChange={(e) => setExpense(e.target.value)}/>
         <button

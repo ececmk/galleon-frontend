@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { FaCheck, FaTrash } from 'react-icons/fa';
+import { FaEdit, FaCheck, FaTrash } from 'react-icons/fa';
 import axios from "axios";
 
 const API_URL = "http://localhost:5005";
@@ -60,12 +60,12 @@ function ExpenseCard({
 
   return (
 
-    <div className="w-96 m-5 bg-[#FD3C4A] rounded py-2 font-bold">
+    <div className="w-[280px] m-5 bg-[#FD3C4A] rounded py-2 font-bold flex">
       <form className="px-2 my-2 ">
         <div className="flex items-center justify-around text-white">
-          <p className="" >{expenseCategory}</p>
+          <p className="px-2" >{expenseCategory}</p>
           <input
-            className={`bg-${editDisabled ? "#FD3C4A" : "white"}`}
+            className={`bg-${editDisabled ? "[#FD3C4A]" : "white"} text-${editDisabled ? "white" : "gray-500"}  h-[38px] mx-1 rounded px-2`}
             maxLength="6"
             size="6"
             disabled={editDisabled}
@@ -74,19 +74,19 @@ function ExpenseCard({
           />
 
           {editDisabled ? (
-            <button className="text-white content-center" onClick={toggleEdit}>
-              Edit Expense
+            <button className="text-white content-center w-[200px]" onClick={toggleEdit}>
+            <FaEdit className="mx-2 w-5 h-5" />
             </button>
           ) : null}
-          <div className="flex items-center">
+          <div className="flex items-center ">
             {editDisabled ? null : (
-              <button className="py-2" onClick={submitExpense}>
-                <FaCheck />
+              <button  onClick={submitExpense}>
+                <FaCheck className="mx-2" />
               </button>
             )}
             {editDisabled ? null : (
-              <button className="py-2" onClick={deleteExpense}>
-                <FaTrash />
+              <button onClick={deleteExpense}>
+                <FaTrash className="mx-2" />
               </button>
             )}
           </div>

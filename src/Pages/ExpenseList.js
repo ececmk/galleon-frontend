@@ -8,7 +8,6 @@ function ExpenseListPage(props) {
 
   return (
     <div>
-      <AddExpense refresh={props.refresh} />
       {list.map((expense) => {
     
         return (

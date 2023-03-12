@@ -1,12 +1,14 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import AddExpense from "../Components/AddExpense";
+import AddIncome from "../Components/AddIncome";
 import DoughnutChart from "../charts/Doughnut";
 import Wallet from "../Components/Wallet";
 import ExpenseListPage from "./ExpenseList";
 import IncomeListPage from "./IncomeList";
 const API_URL = "http://localhost:5005";
 
-function Profile() {
+function Profile(props) {
   const [expense, setExpense] = useState([]);
   const [income, setIncome] = useState([]);
 
@@ -40,12 +42,28 @@ function Profile() {
     getExpense();
   }, []);
 
+  const refreshExpense = () => {
+    getExpense();
+  };
+
+  const refreshIncome = () => {
+    getIncome();
+  };
+
   return (
     <div className="w-screen h-screen">
-        <div className="flex  justify-center">
-            <ExpenseListPage expenses={expense} refresh={getExpense} />
-            <IncomeListPage incomes={income} refresh={getIncome} />
+      <div className="flex justify-around">
+        <AddExpense refresh={refreshExpense} />
+        <AddIncome refresh={refreshIncome} />
       </div>
+      <div className="flex">
+        <div className="flex w-1/2 mx-20">
+          <ExpenseListPage expenses={expense} refresh={refreshExpense} />
+          <IncomeListPage incomes={income} refresh={refreshIncome} />
+        </div>
+        <DoughnutChart expenses={expense} />
+      </div>
+
     </div>
   );
 }

@@ -6,7 +6,7 @@ function IncomeListPage(props) {
 
   return (
     <div>
-      <AddIncome refresh={props.refresh} />
+      
       {list.map((income) => {
         return (
           <IncomeCard

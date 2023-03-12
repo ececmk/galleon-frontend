@@ -39,9 +39,9 @@ function DoughnutChart(props) {
   }, [expenses]);
 
   return (
-    <div className="my-10">
-      <div style={{ width: "450px" }}>
-        <PieChart width={1200} height={600}>
+    <div className="">
+      <div style={{ width: "600px" }}>
+        <PieChart width={2000} height={1000}>
           <Pie
             label={renderLabel}
             data={doughnutData}

@@ -57,7 +57,7 @@ function ExpenseCard({
   };
 
   return (
-    <div className="w-[280px] m-5 bg-[#FD3C4A] rounded py-2 font-bold flex">
+    <div className="w-[270px] m-5 bg-[#FD3C4A] rounded py-2 font-bold flex">
       <form className="px-2 my-2 ">
         <div className="flex items-center justify-around text-white">
           <p className="px-2" >{expenseCategory}</p>

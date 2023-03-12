@@ -60,7 +60,7 @@ function IncomeCard({
 
   return (
 
-    <div className="w-[280px] m-5 bg-[#00A86B] rounded py-2 font-bold flex">
+    <div className="w-[270px] m-5 bg-[#00A86B] rounded py-2 font-bold flex">
       <form className="px-2 my-2 ">
         <div className="flex items-center justify-around text-white">
           <p className="px-2" >{incomeCategory}</p>
@@ -78,7 +78,7 @@ function IncomeCard({
             <FaEdit className="mx-2 w-5 h-5" />
             </button>
           ) : null}
-          <div className="flex items-center ">
+          <div className="flex items-center justify-center ">
             {editDisabled ? null : (
               <button  onClick={submitIncome}>
                 <FaCheck className="mx-2" />

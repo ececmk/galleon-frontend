@@ -10,12 +10,10 @@ function ExpenseCard({
   expenseId,
   refresh,
 }) {
+
   const [editDisabled, setEditDisabled] = useState(true);
-
-
   const [expense, setExpense] = useState(expenseValue);
   const [category, setCategory] = useState([expenseCategory]);
-  console.log()
 
   const submitExpense = (e) => {
     e.preventDefault();
@@ -59,7 +57,6 @@ function ExpenseCard({
   };
 
   return (
-
     <div className="w-[280px] m-5 bg-[#FD3C4A] rounded py-2 font-bold flex">
       <form className="px-2 my-2 ">
         <div className="flex items-center justify-around text-white">

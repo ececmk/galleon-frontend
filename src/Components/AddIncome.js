@@ -8,6 +8,10 @@ function AddIncome(props) {
   const [income, setIncome] = useState(0);
   const [category, SetCategory] = useState("");
 
+  const handleCategoryChange = (selectedCategory) => {
+    SetCategory(selectedCategory.value);
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
 
@@ -19,6 +23,7 @@ function AddIncome(props) {
         headers: { Authorization: `Bearer ${storedToken}` },
       })
       .then((response) => {
+        SetCategory('')
         setIncome(0);
         props.refresh();
       })
@@ -28,15 +33,13 @@ function AddIncome(props) {
   return (
     <div className="py-4  flex flex-col m-5 bg-[#00A86B] rounded ">
       <form className="flex  pr-2 pl-2" onSubmit={handleSubmit}>
-        <IncomeDropdown className="m-1"
-          value={category}
-          onChange={(value) => SetCategory(value.value)}
-          onSelect={(value) => SetCategory(value.value)}/>
+        <IncomeDropdown className="m-1" onCategoryChange={handleCategoryChange} />
+        
         <input className="h-[38px] mx-1 rounded text-gray-500 px-2"
-          placeholder="Amount"
           type="number"
           name="amount"
           value={income}
+          placeholder="Amount"
           onChange={(e) => setIncome(e.target.value)}/>
         <button
           className="px-3  text-white justify-center  font-bold text-lg"

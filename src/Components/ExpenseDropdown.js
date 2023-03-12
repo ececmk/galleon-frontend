@@ -13,7 +13,6 @@ const expenseCategories = [
 
 const ExpenseDropdown = (props) => {
   const [selectedCategory, setSelectedCategory] = useState(null);
-
   const handleCategoryChange = (selectedOption) => {
     setSelectedCategory(selectedOption);
     props.onCategoryChange(selectedOption);

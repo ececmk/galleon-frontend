@@ -5,7 +5,6 @@ import ExpenseDropdown from "./ExpenseDropdown";
 const API_URL = "http://localhost:5005";
 
 function AddExpense(props) {
-
   const [expense, setExpense] = useState(0);
   const [category, SetCategory] = useState('');
 

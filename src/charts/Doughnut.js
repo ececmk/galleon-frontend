@@ -39,14 +39,14 @@ function DoughnutChart(props) {
   }, [expenses]);
 
   return (
-    <div className="">
+    <div className="flex justify-center">
       <div style={{ width: "600px" }}>
         <PieChart width={2000} height={1000}>
           <Pie
             label={renderLabel}
             data={doughnutData}
-            cx={220}
-            cy={200}
+            cx={300}
+            cy={220}
             innerRadius={60}
             outerRadius={80}
             fill="#8884d8"

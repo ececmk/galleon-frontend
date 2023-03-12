@@ -3,7 +3,7 @@ import axios from "axios";
 import AddExpense from "../Components/AddExpense";
 import AddIncome from "../Components/AddIncome";
 import DoughnutChart from "../charts/Doughnut";
-import Wallet from "../Components/Wallet";
+import Wallet from "../Components/Wallet"
 import ExpenseListPage from "./ExpenseList";
 import IncomeListPage from "./IncomeList";
 const API_URL = "http://localhost:5005";
@@ -52,16 +52,18 @@ function Profile(props) {
 
   return (
     <div className="w-screen h-screen">
+    <Wallet incomes={income} expenses={expense} />
       <div className="flex justify-around">
         <AddExpense refresh={refreshExpense} />
         <AddIncome refresh={refreshIncome} />
       </div>
-      <div className="flex">
-        <div className="flex w-1/2 mx-20">
+      <div className="flex justify-center">
+       
           <ExpenseListPage expenses={expense} refresh={refreshExpense} />
+          <DoughnutChart expenses={expense} />
           <IncomeListPage incomes={income} refresh={refreshIncome} />
-        </div>
-        <DoughnutChart expenses={expense} />
+       
+       
       </div>
 
     </div>

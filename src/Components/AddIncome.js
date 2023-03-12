@@ -32,7 +32,7 @@ function AddIncome(props) {
           value={category}
           onChange={(value) => SetCategory(value.value)}
           onSelect={(value) => SetCategory(value.value)}/>
-        <input className="h-[38px] mx-1 rounded text-gray-500"
+        <input className="h-[38px] mx-1 rounded text-gray-500 px-2"
           placeholder="Amount"
           type="number"
           name="amount"

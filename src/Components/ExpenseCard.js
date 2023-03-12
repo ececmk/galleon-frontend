@@ -1,6 +1,6 @@
 import { useState } from "react";
+import { FaCheck, FaTrash } from 'react-icons/fa';
 import axios from "axios";
-import ExpenseDropdown from "./ExpenseDropdown"
 
 const API_URL = "http://localhost:5005";
 
@@ -15,6 +15,7 @@ function ExpenseCard({
 
   const [expense, setExpense] = useState(expenseValue);
   const [category, setCategory] = useState([expenseCategory]);
+  console.log()
 
   const submitExpense = (e) => {
     e.preventDefault();
@@ -57,54 +58,41 @@ function ExpenseCard({
     setExpense(e.target.value);
   };
 
-  const changeCategory = (e) => {
-    setCategory(e.value);
-  };
-
   return (
-    <>
-      <div className="w-52 m-5  border-2 border-red-400  ">
-        <form className="flex flex-col pr-2 pl-2 my-2">
-          <div className="flex">
-         
-            <input
-              maxLength="6"
-              size="6"
-              disabled={editDisabled}
-              value={expense}
-              onChange={changeExpense}
-            />
-          </div>
 
-          <ExpenseDropdown
+    <div className="w-96 m-5 bg-[#FD3C4A] rounded py-2 font-bold">
+      <form className="px-2 my-2 ">
+        <div className="flex items-center justify-around text-white">
+          <p className="" >{expenseCategory}</p>
+          <input
+            className={`bg-${editDisabled ? "#FD3C4A" : "white"}`}
+            maxLength="6"
+            size="6"
             disabled={editDisabled}
-            placeholder={category}
-            onChange={(value) => changeCategory(value)}
-            onSelect={(value) => changeCategory(value)}/>
-        </form>
+            value={expense}
+            onChange={changeExpense}
+          />
 
-        {editDisabled ? (
-          <button
-            className="btn-red w-52 py-1  mt-2 text-white grid content-center bg-[#FD3C4A]  font-bold "
-            onClick={toggleEdit}
-          >
-            Edit Expense
-          </button>
-        ) : null}
-        <div className="flex">
-          {editDisabled ? null : (
-            <button className="btn-green" onClick={submitExpense}>
-              Submit Expense
+          {editDisabled ? (
+            <button className="text-white content-center" onClick={toggleEdit}>
+              Edit Expense
             </button>
-          )}
-          {editDisabled ? null : (
-            <button className="btn-red" onClick={deleteExpense}>
-              Delete Expense
-            </button>
-          )}
+          ) : null}
+          <div className="flex items-center">
+            {editDisabled ? null : (
+              <button className="py-2" onClick={submitExpense}>
+                <FaCheck />
+              </button>
+            )}
+            {editDisabled ? null : (
+              <button className="py-2" onClick={deleteExpense}>
+                <FaTrash />
+              </button>
+            )}
+          </div>
         </div>
-      </div>
-    </>
+      </form>
+    </div>
   );
 }
 

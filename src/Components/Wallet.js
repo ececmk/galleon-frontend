@@ -13,12 +13,10 @@ function Wallet({ incomes, expenses }) {
   });
 
   function getPercentage(incomeTotal, expenseTotal) {
-    let percentage = ((expenseTotal * 100) / incomeTotal).toFixed(2);
-    console.log(percentage);
-    return percentage;
+    return ((expenseTotal * 100) / incomeTotal).toFixed(2);
   }
-const percentage = `${getPercentage(incomeTotal, expenseTotal)}%`
-console.log(percentage, incomeTotal, expenseTotal)
+
+  const percentage = `${getPercentage(incomeTotal, expenseTotal)}%`
   return (
     <div className="flex justify-center items-center my-10">
       <ProgressBar progressPercentage={percentage} />

@@ -7,7 +7,6 @@ import finance3 from "../Images/3.png";
 
 function Home(props) {
   return (
-    <>
       <div className="flex flex-col bg-[#7F3DFF] items-center justify-between w-screen">
         <div className="container px-4 mt-10 flex h-3/4  justify-between rounded-md pt-10 pb-20">
           <div className="pt-10 pl-5 w-3/4">
@@ -62,7 +61,6 @@ function Home(props) {
         </div>
         <Review />
       </div>
-    </>
   );
 }
 

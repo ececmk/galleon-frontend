@@ -5,7 +5,7 @@ import { AuthContext } from "../context/auth.context";
 
 const API_URL = "https://ill-bat-beret.cyclic.app/" 
 
-function Login(props) {
+function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [errorMessage, setErrorMessage] = useState(undefined);

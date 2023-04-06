@@ -8,25 +8,23 @@ const Review = () => {
   const { name, image, text } = people[index]
 
   const checkNumber = (number) => {
-    if(number > people.length -1 ){
+    if (number > people.length - 1)
       return 0;
-    }else if(number < 0) {
-      return people.length -1 
-    }else {
-      return number
-    }
-    
+    else if (number < 0)
+      return people.length - 1;
+    else
+      return number;
   }
 
-  const nextPerson = () =>{
-    setIndex((index) =>{
+  const nextPerson = () => {
+    setIndex((index) => {
       let newIndex = index + 1;
       return checkNumber(newIndex);
     })
   }
 
-  const prevPerson = () =>{
-    setIndex((index) =>{
+  const prevPerson = () => {
+    setIndex((index) => {
       let newIndex = index - 1;
       return checkNumber(newIndex);
     })
@@ -37,14 +35,14 @@ const Review = () => {
       <img src={image} alt={name} className="w-full h-full block object-cover rounded-full relative" />
     </div>
     <div className="">
-    <h4 className="mb-1 m-auto text-2xl">{name}</h4>
-    <p className="font-normal text-[#7F3DFF]">{text}</p>
+      <h4 className="mb-1 m-auto text-2xl">{name}</h4>
+      <p className="font-normal text-[#7F3DFF]">{text}</p>
     </div>
     <div className='button-container'>
       <button className="text-xl border-transparent mx-0 my-2" onClick={prevPerson}>
         <FaChevronLeft />
       </button>
-      <button className="text-xl border-transparent"  onClick={nextPerson}>
+      <button className="text-xl border-transparent" onClick={nextPerson}>
         <FaChevronRight />
       </button>
     </div>

@@ -29,7 +29,6 @@ function ExpenseChart(props) {
 
   useEffect(() => {
     const data = expensesToDoughnutData(expenses);
-    console.log(data);
     setDoughnutData(data);
   }, [expenses]);
 

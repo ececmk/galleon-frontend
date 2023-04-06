@@ -8,7 +8,7 @@ import ExpenseListPage from "../Components/ExpenseList";
 import IncomeListPage from "../Components/IncomeList";
 const API_URL = "https://ill-bat-beret.cyclic.app/";
 
-function Profile(props) {
+function Profile() {
   const [expense, setExpense] = useState([]);
   const [income, setIncome] = useState([]);
 
@@ -36,9 +36,6 @@ function Profile(props) {
 
   useEffect(() => {
     getIncome();
-  }, []);
-
-  useEffect(() => {
     getExpense();
   }, []);
 
@@ -52,22 +49,18 @@ function Profile(props) {
 
   return (
     <div className="w-screen h-screen">
-    <Wallet incomes={income} expenses={expense} />
+      <Wallet incomes={income} expenses={expense} />
       <div className="flex justify-around">
         <AddExpense refresh={refreshExpense} />
         <AddIncome refresh={refreshIncome} />
       </div>
       <div className="flex justify-center">
-       
-          <ExpenseListPage expenses={expense} refresh={refreshExpense} />
-          <div>
+        <ExpenseListPage expenses={expense} refresh={refreshExpense} />
+        <div>
           <ExpenseChart expenses={expense} />
-          </div>
-          <IncomeListPage incomes={income} refresh={refreshIncome} />
-       
-       
+        </div>
+        <IncomeListPage incomes={income} refresh={refreshIncome} />
       </div>
-
     </div>
   );
 }

@@ -7,12 +7,11 @@ function IsAnon({ children }) {
 
   if (isLoading) return <p>Loading ...</p>;
 
-  if (isLoggedIn) {
+  if (isLoggedIn)
     return <Navigate to="/" />;
-    
-  } else {
+  else
     return children;
-  }
+
 }
 
 export default IsAnon;

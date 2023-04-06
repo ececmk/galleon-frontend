@@ -13,7 +13,6 @@ function ExpenseCard({
 
   const [editDisabled, setEditDisabled] = useState(true);
   const [expense, setExpense] = useState(expenseValue);
-  const [category, setCategory] = useState([expenseCategory]);
 
   const submitExpense = (e) => {
     e.preventDefault();
@@ -27,7 +26,6 @@ function ExpenseCard({
       })
       .then((response) => {
         const updatedExpense = response.data;
-        setCategory(updatedExpense.category);
         setExpense(updatedExpense.expense);
         refresh();
       })

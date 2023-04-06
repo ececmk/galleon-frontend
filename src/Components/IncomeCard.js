@@ -11,10 +11,7 @@ function IncomeCard({
   refresh,
 }) {
   const [editDisabled, setEditDisabled] = useState(true);
-
-
   const [income, setIncome] = useState(incomeValue);
-  const [category, setCategory] = useState([incomeCategory]);
 
   const submitIncome = (e) => {
     e.preventDefault();
@@ -28,7 +25,6 @@ function IncomeCard({
       })
       .then((response) => {
         const updatedIncome = response.data;
-        setCategory(updatedIncome.category);
         setIncome(updatedIncome.income);
         refresh();
       })
